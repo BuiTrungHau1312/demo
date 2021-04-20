@@ -1,0 +1,113 @@
+@import '../../../assets/scss/shared';
+@import '../../../assets/scss/variable';
+
+.footer {
+  background-color: $black;
+
+  &-wrapper {
+    max-width: 1600px;
+  }
+
+}
+
+.footer-left {
+  display: flex;
+  user-select: none;
+
+  .footer-name {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    margin-bottom: 20px;
+    display: block;
+    color: $white;
+    opacity: 0.8;
+  }
+
+  .footer-list a {
+    text-decoration: none;
+    color: $white;
+    opacity: 0.4;
+    font-size: 16px;
+    display: block;
+    padding: 2px 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+.footer-right-top {
+  user-select: none;
+
+  span {
+    color: $white;
+    opacity: 0.8;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .footer-right-input input {
+    padding: 0 20px;
+    height: 50px;
+    width: 350px;
+    background-color: #1a1a1a;
+    color: $white;
+    opacity: 0.8;
+    border: 1px solid black;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .footer-right-input span {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #1a1a1a;
+    font-size: 35px;
+    height: 48px;
+    width: 50px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: $primary-transition;
+    &:hover {
+      color: $white;
+    }
+  }
+
+}
+
+.item-hover:hover { color: $white; }
+.span-item {
+  color: $grey-hover-background;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: default;
+  margin-right: 2px;
+  &::selection {
+    color: $white;
+    background-color: black;
+  }
+  &:first-child { transition: $primary-transition; }
+}
+
+
+.media-social-list {
+  margin-top: 70px;
+
+  a {
+    display: block;
+    font-size: 40px;
+    color: $grey-hover-background;
+    margin-right: 20px;
+    &:hover {
+      color: $white;
+    }
+    .mat-icon {
+      font-size: 30px;
+    }
+  }
+}

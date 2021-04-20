@@ -1,0 +1,81 @@
+@import 'variable';
+
+
+ul {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+%btn {
+  display: flex;
+  margin-top: 40px;
+  text-decoration: none;
+  padding: 16px 80px;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 13px;
+  border: 1px solid $white;
+  font-weight: 600;
+  transition: $primary-transition;
+  border-radius: 4px;
+}
+
+%btn-action {
+  a {
+    @extend %btn;
+
+    .mat-icon {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      margin-top: -1.5px;
+    }
+  }
+  a:hover {
+    color: $primary-text;
+    background-color: $white;
+  }
+}
+
+@mixin text-style(
+  $color,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $text-align,
+  $text-transform,
+  $first-letter
+) {
+  font-family: $primary-font;
+
+  @include isEmpty(color, $color);
+  @include isEmpty(font-size, $font-size);
+  @include isEmpty(line-height, $line-height);
+  @include isEmpty(font-weight, $font-weight);
+  @include isEmpty(text-align, $text-align);
+  @include isEmpty(text-transform, $text-transform);
+
+  @if $first-letter != '' {
+    &::first-letter { text-transform: capitalize; }
+  }
+}
+
+@mixin isEmpty($prop, $value) {
+  @if $value != '' {
+    #{ $prop }: $value;
+  } @else {
+    @if $prop == 'line-height' {
+      #{ $prop }: $primary-line-height;
+    } @else if $prop == 'font-size' {
+      #{ $prop }: $primary-font-size;
+    } @else {
+      #{ $prop }: default;
+    }
+  }
+}

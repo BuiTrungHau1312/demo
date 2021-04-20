@@ -1,0 +1,12 @@
+@import '/src/assets/scss/variable';
+@import '/src/assets/scss/shared';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $primary-font !important;
+}

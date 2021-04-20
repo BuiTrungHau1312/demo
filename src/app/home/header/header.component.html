@@ -1,0 +1,134 @@
+
+<header class="header container-fluid">
+  <section class="header-wrap container">
+    <div class="row">
+      <div class="col-1 col-xl-1 p-0">
+        <div class="logo">
+          <img src="https://cdn1.christopherguy.com/images/logo_new5.png" onerror="this.src='assets/images/logo/1.png'" alt="logo">
+          <span class="text-logo">Ho Chi Minh</span>
+        </div>
+      </div>
+
+      <div class="col-11 col-xl-10 p-0">
+        <div class="wrap-right">
+          <nav class="nav-top">
+            <ul class="nav-top__list">
+                <li class="nav-top__item">
+                    <a href="#" class="nav-top__link">products</a>
+                </li>
+                <li class="nav-top__item">
+                    <a href="#" class="nav-top__link">rooms</a>
+                </li>
+                <li class="nav-top__item">
+                    <a href="#" class="nav-top__link">styletools</a>
+                </li>
+                <li class="nav-top__item">
+                    <a href="#" class="nav-top__link">brand</a>
+                </li>
+            </ul>
+
+            <div class="menu-right ">
+              <ul class="menu-right-list">
+                <li class="menu-right-item">
+                  <a href="#" class="menu-right-link">
+                    <span class="login">Login / Register</span>
+                    <mat-icon>person_outline</mat-icon>
+                  </a>
+                </li>
+                <li class="menu-right-item">
+                  <a href="#" class="menu-right-link">
+                    <mat-icon>search</mat-icon>
+                  </a>
+                </li>
+                <li class="menu-right-item">
+                  <a href="#" class="menu-right-link">
+                    <mat-icon>language</mat-icon>
+                  </a>
+                </li>
+                <li class="menu-right-item d-xl-none">
+                  <a
+                    href="#"
+                    (click)="toggleDisplay($event, '#navbar-mobile' )"
+                    class="menu-right-link"
+                  >
+                    <mat-icon>menu</mat-icon>
+                  </a>
+              </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="nav-category">
+            <ul class="nav-category__list">
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">seating</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">tables</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">cabinets</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">bedroom</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">mirrors</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">art & decor</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">rugs</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">lighting</a>
+              </li>
+              <li class="nav-category__item">
+                <a href="#" class="nav-category__link">swatches</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="navbar-mobile pt-4 pb-4 pl-2 pr-2 d-xl-none">
+    <ul>
+      <li>
+        <a href="#" (click)="toggleDisplay($event, '.sub-navbar-mobile')">
+          <span class="navbar-mobile__name">products</span>
+          <mat-icon class="navbar-mobile__icon">expand_more</mat-icon>
+        </a>
+        <ul class="sub-navbar-mobile">
+          <li>
+            <a href="">seatings</a>
+          </li>
+          <li>
+            <a href="">tables</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">products</span>
+          <mat-icon class="navbar-mobile__icon">expand_more</mat-icon>
+        </a>
+        <ul class="sub-navbar-mobile">
+          <li>
+            <a href="">seatings</a>
+          </li>
+          <li>
+            <a href="">tables</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</header>
+
+
+
