@@ -24,31 +24,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
     );
   }
 
-  toggleDisplay(evt: Event, elm: string): void {
+  showMenu(evt: Event, elm: string): void {
     evt.preventDefault();
     evt.stopPropagation();
-    // let navElm = document.querySelector(elm) as HTMLElement;
+    let navElm = document.querySelector(elm);
 
-    console.log(elm);
-    // navElm.classList.toggle('active');
+    navElm?.classList.toggle('active');
+    console.log(navElm);
 
   }
 
-  toggleDisplayChildrenMenu(evt: Event, elm: any): void {
+  toggleDisplayChildrenMenu(evt, elm: any): void {
     evt.preventDefault();
     evt.stopPropagation();
 
-    var target = evt.target as EventTarget;
-
-    // if (target?.parentElement == 'a') {
-    //   console.log(target);
-    // } else {
-    //   console.log("fail");
-
-    // }
-    console.log(evt);
-
-
+    var target = evt.target;
+    var parent = target.parentElement.parentElement;
+    parent.classList.toggle('active');
   }
 
 }

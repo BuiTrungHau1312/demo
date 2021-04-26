@@ -29,10 +29,8 @@
         position: absolute;
         top: 100%;
         width: 100%;
-        text-align: center;
-        background-color: $black;
+        @include text-style($white, 12px, '', '', center, '', '');
         color: $white;
-        font-size: 12px;
 
         @media (max-width: $tablet) {
           font-size: 8px;
@@ -69,12 +67,10 @@
     &__link {
       display: block;
       text-decoration: none;
-      color: #fff;
       padding: 6px 0;
-      text-align: center;
       text-transform: uppercase;
-      font-size: 13px;
       transition: $primary-transition;
+      @include text-style($white, 13px, '', '', center, '', '');
 
       &:hover {
         font-weight: 600;
@@ -153,33 +149,66 @@
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: scroll;
+  transform: translateY(200%);
+  transition: $primary-transition;
+  opacity: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ul {
     margin: 0 auto;
-    li {
-      a {
-        display: block;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 6px 12px;
-        @include text-style($secondary-text, 20px, 150%, 600, center, uppercase, '');
-      }
-      .sub-navbar-mobile {
-        display: none;
-      }
-      .active {
-        display: block;
-      }
-    }
+    padding-bottom: 50px;
+
   }
   &__icon {
     position: absolute;
     right: 0;
-    --size: 34px;
+    --size: 26px;
     width: var(--size);
     height: var(--size);
     font-size: var(--size);
   }
 }
+.navbar-mobile.active {
+  transform: translateY(0);
+  opacity: 1;
+}
 
+.navbar-mobile__item {
+  --size-padding: 4px;
+  padding-top: var(--size-padding);
+  padding-bottom: var(--size-padding);
+  a {
+    display: block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    transition: $primary-transition;
+    @include text-style($secondary-text, 18px, 150%, 400, center, uppercase, '');
+    &:hover {
+      font-weight: 600;
+    }
+  }
+  .sub-navbar-mobile {
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    // background-color: $grey-background;
+    a {
+      // color: $primary-text;
+      transition: $primary-transition;
+      font-size: 16px;
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}
+.navbar-mobile__item.active {
+  .sub-navbar-mobile {
+    display: block;
+  }
+}

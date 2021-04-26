@@ -48,7 +48,7 @@
                 <li class="menu-right-item d-xl-none">
                   <a
                     href="#"
-                    (click)="toggleDisplay($event, '#navbar-mobile' )"
+                    (click)="showMenu($event, '.navbar-mobile' )"
                     class="menu-right-link"
                   >
                     <mat-icon>menu</mat-icon>
@@ -96,34 +96,112 @@
 
   <div class="navbar-mobile pt-4 pb-4 pl-2 pr-2 d-xl-none">
     <ul>
-      <li>
-        <a href="#" (click)="toggleDisplay($event, '.sub-navbar-mobile')">
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
           <span class="navbar-mobile__name">products</span>
           <mat-icon class="navbar-mobile__icon">expand_more</mat-icon>
         </a>
         <ul class="sub-navbar-mobile">
           <li>
-            <a href="">seatings</a>
+            <a href="#">Seatings</a>
           </li>
           <li>
-            <a href="">tables</a>
+            <a href="#">Tables</a>
+          </li>
+          <li>
+            <a href="#">Cabinets</a>
+          </li>
+          <li>
+            <a href="#">Bedroom</a>
+          </li>
+          <li>
+            <a href="#">Mirrors</a>
+          </li>
+          <li>
+            <a href="#">Art & Decor</a>
+          </li>
+          <li>
+            <a href="#">Rugs</a>
+          </li>
+          <li>
+            <a href="#">Lighting</a>
           </li>
         </ul>
       </li>
 
-      <li>
-        <a #products (click)="toggleDisplayChildrenMenu($event, '#products')">
-          <span class="navbar-mobile__name">products</span>
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">rooms</span>
           <mat-icon class="navbar-mobile__icon">expand_more</mat-icon>
         </a>
         <ul class="sub-navbar-mobile">
           <li>
-            <a href="">seatings</a>
+            <a href="#">All Room</a>
           </li>
           <li>
-            <a href="">tables</a>
+            <a href="#">Living</a>
+          </li>
+          <li>
+            <a href="#">Dining</a>
+          </li>
+          <li>
+            <a href="#">Bedroom</a>
+          </li>
+          <li>
+            <a href="#">Study</a>
+          </li>
+          <li>
+            <a href="#">Lobby</a>
           </li>
         </ul>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">styletools</span>
+        </a>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">brand</span>
+        </a>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">media</span>
+          <mat-icon class="navbar-mobile__icon">expand_more</mat-icon>
+        </a>
+        <ul class="sub-navbar-mobile">
+          <li>
+            <a href="#">Films</a>
+          </li>
+          <li>
+            <a href="#">Magazine</a>
+          </li>
+          <li>
+            <a href="#">Social</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">favorites</span>
+        </a>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">share</span>
+        </a>
+      </li>
+
+      <li class="navbar-mobile__item">
+        <a href="#" #products (click)="toggleDisplayChildrenMenu($event, '#products')">
+          <span class="navbar-mobile__name">enquire</span>
+        </a>
       </li>
     </ul>
   </div>
